@@ -13,6 +13,7 @@ class WebScrapper:
         for site in self.site_list:
             print("[SEARCHING]", site["name"])
             url = site["url"]
+            base_url = site["base_url"]
             # Make the request to the URL and parse the HTML with BeautifulSoup. set headers like chrome
             try:
                 response = requests.get(url=url, headers=site["header"],timeout=10)
@@ -41,7 +42,7 @@ class WebScrapper:
                         result.append({
                             "siteName":site["name"],
                             "text":full_text,
-                            "link":link,
+                            "link":base_url + link,
                         })
                         # keywords are mutually 'or' in relation. so if found a single keyword, break.
                         break
@@ -51,7 +52,7 @@ class WebScrapper:
         if result:
             message = "[ Keyword detected ] keywords = \"{}\"".format('\", \"'.join(self.keywords))
             for idx, item in enumerate(result):
-                message += f'{idx}. {item["siteName"]}\n\t{item["text"]}\n\t{item["link"]}\n'
+                message += f'{idx}. {item["siteName"]}\n\t{item["text"]}\n\t{item["link"]}\n\n'
             print(message)
             response = callback(message)
             if response.status_code == 200:
