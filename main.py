@@ -27,14 +27,14 @@ if __name__ == '__main__':
                     {
                         "name":"쿨앤조이_이벤트", 
                         "url":'https://coolenjoy.net/bbs/29',
-                        "base_url":'https://coolenjoy.net',
+                        "base_url":'',
                         "target":{"type":'class', "value": 'tbl_head01 tbl_wrap', "child": 'tr'},
                         "header":{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'},
                     },
                     {
                         "name":"쿨앤조이_지름", 
                         "url":'https://coolenjoy.net/bbs/jirum',
-                        "base_url":'https://coolenjoy.net',
+                        "base_url":'',
                         "target":{"type":'class', "value": 'tbl_head01 tbl_wrap', "child": 'tr'},
                         "header":{'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'},
                     },
