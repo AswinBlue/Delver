@@ -1,7 +1,7 @@
-from SlackBot import SlackBot
+# from SlackBot import SlackBot
+import DiscordMessage
 from WebScrapper import WebScrapper
 if __name__ == '__main__':
-    bot = SlackBot()
     # 수정방법
     # 1. keywords에 원하는 키워드를 입력한다.
     # 2. 검색하고 싶은 사이트의 링크를 url에 넣고, base_url 에는 해당 사이트의 root 주소를 넣는다. (메인 페이지의 주소)
@@ -56,5 +56,6 @@ if __name__ == '__main__':
                         },
                     },
                 ],
-                keywords=['노트북'])
-    ws.find_keywords(bot.send_message)
+                keywords=['노트북', '마우스', '키보드'])
+    # bot = SlackBot()
+    ws.find_keywords(DiscordMessage.send_message)
