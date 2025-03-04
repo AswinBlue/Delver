@@ -16,4 +16,9 @@ class SlackBot:
     
     def send_message(self, message):
         # send message
-        return self.client.chat_postMessage(channel='#alarm', text=message)
+        res = self.client.chat_postMessage(channel='#alarm', text=message)
+        if res.status_code == 200:
+            print("message sent successfully!")
+        else:
+            print(f"Failed to send message with error code {res.status_code}")
+        return res

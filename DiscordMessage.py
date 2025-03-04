@@ -14,6 +14,9 @@ def send_message(text):
         "content" : text,
         "username" : "Delver"
     }
-    res=requests.post(os.environ['DISCORD_URL'],json=data)
-    
-    
+    res=requests.post(os.environ['DISCORD_URL'], json=data)
+    if res.status_code == 200:
+        print("message sent successfully!")
+    else:
+        print(f"Failed to send message with error code {res.status_code}")
+    return res
