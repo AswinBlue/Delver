@@ -58,6 +58,6 @@ if __name__ == '__main__':
                     #     },
                     # },
                 ],
-                keywords=['노트북', '마우스', '키보드'])
+                keywords=['코닥', 'S25', '마우스'])
     # bot = SlackBot()
     ws.find_keywords(DiscordMessage.send_message, separate=True)
